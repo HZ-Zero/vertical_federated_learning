@@ -28,17 +28,17 @@ def vertical_logistic_regression(X, y, X_test, y_test, config):
     return True
 
 if __name__ == '__main__':
-    # HOST = "127.0.0.1"
-    HOST = "47.98.255.118"
-    ADDR_A = (HOST, 9090)
+    HOST = "127.0.0.1"
+    REMOTE = "47.98.255.118"
+    ADDR_A = (REMOTE, 9090)
     ADDR_B = (HOST, 8081)
-    ADDR_C = (HOST, 9093)
+    ADDR_C = (REMOTE, 9093)
 
     config = {
-        'pro_name': 'pro_test',
+        'pro_name': 'pro_0908',
         'n_clients': 1,
         'key_length': 512,
-        'n_iter': 2,
+        'n_iter': 30,
         'lambda': 10,
         'lr': 0.05,
         'BGD': False,
