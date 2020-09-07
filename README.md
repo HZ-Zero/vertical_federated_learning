@@ -7,16 +7,12 @@ master 本地版本
 remote 远程版本
 
 
-#文件目录
+##文件目录
 
    |--Servers
-   
    |   |--utils
-   
    |   |   |--__init__.py
-   
    |   |   |--funct.py 								 # SERVER的工具函数
-   
    |   |--ServerC
    |   |   |--log.log 									# 服务日志
    |   |   |--ServerC.py							  # SERVERC 服务 
