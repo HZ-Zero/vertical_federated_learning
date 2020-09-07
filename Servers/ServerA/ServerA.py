@@ -3,8 +3,16 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 from flask_pymongo import PyMongo
-from utils.funct import check_params
+import sys
+sys.path.append("/root/vertical_learning/vertical_federated_learning3/Servers/utils/")
+sys.path.append("/root/vertical_learning/vertical_federated_learning3/Servers/entity/")
 
+# sys.path.append("../utils/funct/")
+# print(sys.path)
+
+# from utils.funct import *
+# import funct
+from funct import *
 
 app = Flask(__name__)
 app.config['DEBUG'] = True  # 开启 debug
@@ -57,4 +65,4 @@ def get_gradient():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8080)
+    app.run(host='172.16.154.195', port=9090)

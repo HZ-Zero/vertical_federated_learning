@@ -3,10 +3,17 @@ from flask import Flask
 from flask import jsonify
 from flask import request
 from flask_pymongo import PyMongo
-from utils.funct import generate_key_pair
-from utils.funct import check_params
+import sys
+sys.path.append("/root/vertical_learning/vertical_federated_learning3/Servers/utils/")
+sys.path.append("/root/vertical_learning/vertical_federated_learning3/Servers/entity/")
+from funct import *
+from data_type import *
+#
+# from utils.funct import generate_key_pair
+# from utils.funct import check_params
+
 from phe import paillier
-from entity.data_type import PrivateKey
+# from entity.data_type import PrivateKey
 from threading import Thread
 
 app = Flask(__name__)
@@ -34,8 +41,9 @@ def decrypt_weight(encrypted_gradient, param_dict):
     else:
         print("fail to find the corresponding private key")
         print(param_dict)
-
-
+@app.route('/', methods=['GET'])
+def hello():
+    return 'hello'
 @app.route('/getPublicKey', methods=['GET'])
 def get_public_key():
     # 检验参数
@@ -127,4 +135,4 @@ def get_gradient():
 
 
 if __name__ == "__main__":
-    app.run(host='127.0.0.1', port=8083,threaded=False)
+    app.run(host='172.16.154.195', port=9093,threaded=False)
